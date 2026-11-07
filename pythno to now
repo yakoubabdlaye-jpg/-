@@ -1,0 +1,83 @@
+from pathlib import Path
+import hashlib
+
+target = Path("sample.txt")
+baseline = Path("sample.txt.sha256")
+
+
+def calculate_hash(file_path):
+    sha256 = hashlib.sha256()
+
+        with file_path.open("rb") as file:
+                for chunk in iter(lambda: file.read(4096), b""):
+                            sha256.update(chunk)
+
+                                return sha256.hexdigest()
+
+
+                                # إنشاء ملف تجريبي عند أول تشغيل
+                                if not target.exists():
+                                    target.write_text(
+                                                "My first cybersecurity project!",
+                                                        encoding="utf-8"
+                                    )
+
+                                    current_hash = calculate_hash(target)
+
+                                    print("=== CyberSecurity Tools ===")
+                                    print("File:", target.name)
+                                    print("SHA256:", current_hash)
+
+                                    if not baseline.exists():
+                                        baseline.write_text(current_hash, encoding="utf-8")
+                                            print("\nBaseline created successfully!")
+
+                                            else:
+                                                saved_hash = baseline.read_text(encoding="utf-8").strip()
+
+                                                    if current_hash == saved_hash:
+                                                            print("\nSTATUS: File is unchanged.")
+                                                                else:
+                                                                        print("\nWARNING: File has changed!")from pathlib import Path
+                                                                        import hashlib
+
+                                                                        target = Path("sample.txt")
+                                                                        baseline = Path("sample.txt.sha256")
+
+
+                                                                        def calculate_hash(file_path):
+                                                                            sha256 = hashlib.sha256()
+
+                                                                                with file_path.open("rb") as file:
+                                                                                        for chunk in iter(lambda: file.read(4096), b""):
+                                                                                                    sha256.update(chunk)
+
+                                                                                                        return sha256.hexdigest()
+
+
+                                                                                                        # إنشاء ملف تجريبي عند أول تشغيل
+                                                                                                        if not target.exists():
+                                                                                                            target.write_text(
+                                                                                                                        "My first cybersecurity project!",
+                                                                                                                                encoding="utf-8"
+                                                                                                            )
+
+                                                                                                            current_hash = calculate_hash(target)
+
+                                                                                                            print("=== CyberSecurity Tools ===")
+                                                                                                            print("File:", target.name)
+                                                                                                            print("SHA256:", current_hash)
+
+                                                                                                            if not baseline.exists():
+                                                                                                                baseline.write_text(current_hash, encoding="utf-8")
+                                                                                                                    print("\nBaseline created successfully!")
+
+                                                                                                                    else:
+                                                                                                                        saved_hash = baseline.read_text(encoding="utf-8").strip()
+
+                                                                                                                            if current_hash == saved_hash:
+                                                                                                                                    print("\nSTATUS: File is unchanged.")
+                                                                                                                                        else:
+                                                                                                                                                print("\nWARNING: File has changed!")
+                                    )
+                                    
